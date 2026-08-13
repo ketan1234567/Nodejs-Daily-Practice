@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "init": "^0.1.2"
+    "express": "^5.2.1",
+    "init": "^0.1.2",
+    "mysql2": "^3.23.3",
+    "redis": "^6.2.1"
   }
 }

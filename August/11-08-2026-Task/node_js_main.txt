@@ -1,0 +1,41 @@
+Level 1 — Master first
+
+Promises
+async/await
+Event Loop
+Express
+CRUD
+Middleware
+MySQL
+JWT
+
+Level 2
+
+Transactions
+JOIN
+Indexes
+Pagination
+Error handling
+Service/Controller architecture
+
+Level 3
+
+Redis
+Caching
+Queues
+Rate limiting
+Refresh tokens
+Idempotency
+Performance
+Security
+
+
+Level 4 — 4-year interview
+
+System Design
+Scalability
+Load balancing
+Database optimization
+Concurrency
+Production debugging
+Architecture decisions

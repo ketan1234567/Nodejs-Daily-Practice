@@ -1,0 +1,164 @@
+PHP MOST ASKED INTERVIEW PROGRAMMING QUESTIONS
+_________________________________________________________________________________________________________________
+
+1.  String Reverse
+2.  Palindrome Check
+
+join("") joins all characters back into one string.
+
+reverse() reverses the array.
+
+split("") breaks the string into individual characters.
+
+	
+	let str="ketan"
+	
+	let reverse=str.split("").reverse().join("")
+
+    if (str===reverse) {
+        console.log("this number is Palindrome");
+        
+    }else{
+           console.log("Not Palindrome");
+    }
+_________________________________________________________________________________________________________________
+
+3.  Prime Number
+
+
+let arr = [1,2,3,4,5,6,7,8,9,10];
+
+for (let i = 0; i < arr.length; i++) {
+
+    let count = 0;
+
+    for (let j = 1; j <= arr[i]; j++) {
+
+        if (arr[i] % j === 0) {
+            count++;
+        }
+    }
+
+    if (count === 2) {
+        console.log(arr[i]);
+    }
+}
+
+_________________________________________________________________________________________________________________
+
+4.  Factorial
+
+A factorial means multiplying a number by all positive numbers below it until 1.
+
+
+	let num=5;
+  let factorial=1
+
+
+  for (let i=1; i <=num; i++) {
+    factorial=factorial*i;
+    
+  }
+
+  console.log(factorial);
+
+
+_________________________________________________________________________________________________________________
+
+
+5.  Fibonacci-Series
+
+A Fibonacci Series is a series of numbers where each new number is the sum of the previous two numbers.
+
+a = first number
+b = second number
+
+c = a + b
+
+
+   a = b;
+    b = c;
+
+
+
+_________________________________________________________________________________________________________________
+
+
+6.  Even / Odd Number
+7.  Swap Two Numbers
+8.  Find Largest Number in Array
+9.  Find Smallest Number in Array
+10. Array Ascending Order
+11. Array Descending Order
+12. Find Duplicate Elements
+13. Remove Duplicate Elements
+14. Count Vowels in String
+15. Count Words in String
+____________________________________________________________________________________________________
+
+16. Find Second Largest Number
+
+let arr = [10, 50, 20, 80, 30];
+
+let largest = 0;
+let secondLargest = 0;
+
+for (let i = 0; i < arr.length; i++) {
+
+    if (arr[i] > largest) {
+
+        secondLargest = largest;
+        largest = arr[i];
+
+    } else if (arr[i] > secondLargest && arr[i] !== largest) {
+
+        secondLargest = arr[i];
+    }
+}
+
+console.log(secondLargest);
+
+
+
+
+
+
+____________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+17. Sum of Array Elements
+18. Check Armstrong Number
+19. Count Frequency of Characters
+20. Find Missing Number in Array
+
+PRIORITY FOR PHP INTERVIEW
+
+1.  String Reverse
+2.  Palindrome
+3.  Prime Number
+4.  Fibonacci
+5.  Factorial
+6.  Largest Number
+7.  Second Largest Number
+8.  Ascending / Descending Sorting
+9.  Duplicate Elements
+10. Array Sorting with 0 Position Fixed
+
+PHP BASICS TO PREPARE
+
+-   GET vs POST
+-   include vs require
+-   == vs ===
+-   Sessions vs Cookies
+-   isset() vs empty()
+-   OOP Concepts
+-   PDO / MySQL
+-   SQL JOIN
+-   CRUD Operations
+-   Password Hashing

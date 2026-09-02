@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+let arr = [0, 12, 20, 1, 0, 25, 8];
+
+let numbers=[]
+
+
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i]!==0) {
+      numbers.push(arr[i])
+    }
+}
+
+for (let i = 0; i < numbers.length; i++) {
+   for (let j = i+1; j < numbers.length; j++) {
+    
+    if (numbers[i]>numbers[j]) {
+        let temp=numbers[i]
+        numbers[i]=numbers[j]
+        numbers[j]=temp
+    }
+    
+   }
+    
+}
+
+let index=0
+for (let i = 0; i < arr.length; i++) {
+   if (arr[i] !==0) {
+    arr[i]=numbers[index]
+    index++
+   }
+    
+}
+
+console.log(arr);
+
+    
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -18,15 +18,15 @@ main_user.on("connect",()=>{
 // })
 
 
-// main_user.set("user_1","ketan")
-// .then((value)=>{
+main_user.set("user_1","ketan")
+.then((value)=>{
     
-//     console.log("sucessfully stored");
+    console.log("sucessfully stored");
     
-// }).catch((error)=>{
-//     console.log(error);
+}).catch((error)=>{
+    console.log(error);
     
-// })
+})
 
 
 

@@ -122,54 +122,54 @@ const getUsers = async (req, res) => {
     }
 };
 // GET LEAD BY ID
-const getUserById = async (req, res) => {
+// const getUserById = async (req, res) => {
 
-    try {
+//     try {
 
-        const { id } = req.params;
+//         const { id } = req.params;
 
-        const [rows] = await db.query(
-            `SELECT
-                id,
-                firstName,
-                lastName,
-                email,
-                phone,
-                company,
-                jobTitle,
-                city,
-                country,
-                message,
-                created_at
-             FROM leads
-             WHERE id = ?`,
-            [id]
-        );
+//         const [rows] = await db.query(
+//             `SELECT
+//                 id,
+//                 firstName,
+//                 lastName,
+//                 email,
+//                 phone,
+//                 company,
+//                 jobTitle,
+//                 city,
+//                 country,
+//                 message,
+//                 created_at
+//              FROM leads
+//              WHERE id = ?`,
+//             [id]
+//         );
 
-        if (rows.length === 0) {
+//         if (rows.length === 0) {
 
-            return res.status(404).json({
-                success: false,
-                message: "Lead not found"
-            });
+//             return res.status(404).json({
+//                 success: false,
+//                 message: "Lead not found"
+//             });
 
-        }
+//         }
 
-        res.json({
-            success: true,
-            data: rows[0]
-        });
+//         res.json({
+//             success: true,
+//             data: rows[0]
+//         });
 
-    } catch (error) {
+//     } catch (error) {
 
-        console.log(error);
+//         console.log(error);
 
-        res.status(500).json({
-            success: false,
-            message: "Server error"
-        });
-    }
-};
+//         res.status(500).json({
+//             success: false,
+//             message: "Server error"
+//         });
+//     }
+// };
 
 
 // UPDATE LEAD
@@ -310,7 +310,6 @@ const deleteUser = async (req, res) => {
 
 module.exports = {
     getUsers,
-    getUserById,
     updateUser,
     deleteUser
 };

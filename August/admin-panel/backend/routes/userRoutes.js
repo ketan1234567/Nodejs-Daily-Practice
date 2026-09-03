@@ -13,7 +13,7 @@ const router = express.Router();
 
 router.get("/", authMiddleware, getUsers);
 
-router.get("/:id", authMiddleware, getUserById);
+// router.get("/:id", authMiddleware, getUserById);
 
 router.put("/:id", authMiddleware, updateUser);
 

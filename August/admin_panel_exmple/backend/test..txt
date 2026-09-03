@@ -1,0 +1,160 @@
+admin-panel/
+│
+├── backend/
+│   ├── config/
+│   │   └── db.js
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   └── userController.js
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   └── userRoutes.js
+│   ├── middleware/
+│   │   └── authMiddleware.js
+│   ├── server.js
+│   └── .env
+│
+├── frontend/
+│   ├── login.html
+│   ├── register.html
+│   ├── dashboard.html
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       ├── login.js
+│       ├── register.js
+│       └── dashboard.js
+│
+└── database/
+    └── database.sql
+
+
+USE admin_panel;
+
+
+
+
+INSERT INTO leads
+(firstName, lastName, email, password, phone, company, jobTitle, city, country, message)
+VALUES
+
+('Amit', 'Sharma', 'amit.sharma@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543210', 'Tech Solutions', 'Software Developer', 'Pune', 'India', 'Interested in your software development services.'),
+
+('Priya', 'Patil', 'priya.patil@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543211', 'Digital Works', 'Project Manager', 'Mumbai', 'India', 'I would like to know more about your services.'),
+
+('Rahul', 'Deshmukh', 'rahul.deshmukh@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543212', 'WebTech India', 'Team Lead', 'Nashik', 'India', 'Please contact me regarding the project requirements.'),
+
+('Sneha', 'Kulkarni', 'sneha.kulkarni@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543213', 'Cloud Systems', 'Business Analyst', 'Nagpur', 'India', 'Looking for a solution for our business process.'),
+
+('Rohan', 'Joshi', 'rohan.joshi@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543214', 'Code Labs', 'Backend Developer', 'Pune', 'India', 'Need more information about the backend development service.'),
+
+('Neha', 'Verma', 'neha.verma@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543215', 'InfoTech', 'HR Manager', 'Delhi', 'India', 'We are interested in discussing a business partnership.'),
+
+('Vikram', 'Singh', 'vikram.singh@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543216', 'Global Tech', 'CTO', 'Bangalore', 'India', 'Please arrange a product demonstration.'),
+
+('Pooja', 'More', 'pooja.more@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543217', 'Smart Apps', 'Product Manager', 'Aurangabad', 'India', 'I need pricing details for your product.'),
+
+('Karan', 'Mehta', 'karan.mehta@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543218', 'NextGen Software', 'Software Engineer', 'Ahmedabad', 'India', 'We are looking for a reliable software partner.'),
+
+('Anjali', 'Shinde', 'anjali.shinde@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543219', 'Business Hub', 'Marketing Manager', 'Pune', 'India', 'Please share more information about your services.'),
+
+('Saurabh', 'Kale', 'saurabh.kale@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543220', 'Tech World', 'Senior Developer', 'Mumbai', 'India', 'Interested in discussing our upcoming project.'),
+
+('Meera', 'Rao', 'meera.rao@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543221', 'Enterprise Apps', 'Director', 'Hyderabad', 'India', 'Please contact me for a detailed discussion.'),
+
+('Akash', 'Pawar', 'akash.pawar@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543222', 'Data Systems', 'Data Analyst', 'Pune', 'India', 'I would like to discuss our data requirements.'),
+
+('Nikita', 'Jadhav', 'nikita.jadhav@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543223', 'Creative Digital', 'UI Designer', 'Nashik', 'India', 'Interested in your design and development services.'),
+
+('Manish', 'Gupta', 'manish.gupta@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543224', 'Software Point', 'Engineering Manager', 'Delhi', 'India', 'Please send me your service details.'),
+
+('Riya', 'Shah', 'riya.shah@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543225', 'FinTech Solutions', 'Finance Manager', 'Mumbai', 'India', 'We need a customized solution for our company.'),
+
+('Deepak', 'Chavan', 'deepak.chavan@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543226', 'Mobile Tech', 'Mobile Developer', 'Kolhapur', 'India', 'Interested in developing a mobile application.'),
+
+('Swati', 'Desai', 'swati.desai@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543227', 'Marketing Pro', 'Marketing Executive', 'Surat', 'India', 'Please provide information about your marketing solutions.'),
+
+('Harsh', 'Mishra', 'harsh.mishra@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543228', 'IT Services', 'IT Manager', 'Bangalore', 'India', 'We are interested in your IT services.'),
+
+('Komal', 'Thakur', 'komal.thakur@example.com', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', '9876543229', 'Business Solutions', 'Operations Manager', 'Chennai', 'India', 'Please contact me to discuss our requirements.');
+
+
+
+
+
+
+
+
+
+@wisefe3917-prorises-com
+
+
+
+
+
+https://codepen.io/wisefe3917-prorises-com/pen/01a067d2-4521-77b7-983c-98f87bcd4dc2          landing_page
+https://codepen.io/editor/wisefe3917-prorises-com/pen/01a06794-b9bd-72f8-9854-2a70d5ff879c   admin_panel_code
+https://codepen.io/editor/wisefe3917-prorises-com/pen/01a067f7-0c9c-7287-995b-d5e548fba52c Login_code
+
+https://codepen.io/wisefe3917-prorises-com/pen/01a06794-b9bd-72f8-9854-2a70d5ff879c
+
+
+mkdir controllers routes middleware config
+
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+
+leads.map((lead) => `
+
+.map() प्रत्येक lead वर loop करतो.
+
+lead 1 → row तयार
+lead 2 → row तयार
+lead 3 → row तयार
+
+
+
+give me 
+
+CREATE DATABASE admin_panel;
+
+USE admin_panel;
+
+CREATE TABLE signup (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+CREATE TABLE leads (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    firstName VARCHAR(100) NOT NULL,
+    lastName VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    company VARCHAR(150) NOT NULL,
+    jobTitle VARCHAR(150) NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    country VARCHAR(100) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+
+
+
+
+
+
+
+
+
+

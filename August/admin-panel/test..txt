@@ -29,6 +29,14 @@ admin-panel/
     └── database.sql
 
 
+https://codepen.io/editor/wisefe3917-prorises-com/pen/01a06794-b9bd-72f8-9854-2a70d5ff879c
+
+https://codepen.io/wisefe3917-prorises-com/pen/01a06794-b9bd-72f8-9854-2a70d5ff879c
+
+
+https://codepen.io/editor/wisefe3917-prorises-com/pen/01a06794-b9bd-72f8-9854-2a70d5ff879c
+
+
 USE admin_panel;
 
 INSERT INTO leads
@@ -80,6 +88,17 @@ VALUES
 
 
 
+
+
+@wisefe3917-prorises-com
+
+
+
+
+
+https://codepen.io/wisefe3917-prorises-com/pen/01a067d2-4521-77b7-983c-98f87bcd4dc2          landing_page
+https://codepen.io/editor/wisefe3917-prorises-com/pen/01a06794-b9bd-72f8-9854-2a70d5ff879c   admin_panel_code
+https://codepen.io/editor/wisefe3917-prorises-com/pen/01a067f7-0c9c-7287-995b-d5e548fba52c Login_code
 
 
 

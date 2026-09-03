@@ -182,12 +182,41 @@
                     border-radius: 10px;
                 }
             }
+			
+			.team-card {
+    padding: 20px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    height: auto;
+    min-height: 0;
+}
+
+.team-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 12px;
+}
+
+.team-card h5 {
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+
+.team-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
         </style>
-        ```
+       
     </head>
 
     <body>
-        ```
+       
         <!-- ================= NAVBAR ================= -->
 
         <nav class="navbar navbar-expand-lg bg-white shadow-sm">
@@ -202,53 +231,69 @@
 
         <section class="hero-section">
             <div class="container">
-                <div class="row align-items-center g-5">
+                <div class="row align-items-start g-5">
                     <!-- ================= LEFT CONTENT ================= -->
 
-                    <div class="col-lg-6">
-                        <h1 class="hero-title mb-4">
-                            Grow Your Business
+                  <!-- LEFT SIDE -->
+    <div class="col-lg-6">
 
-                            <span>With Us</span>
-                        </h1>
+        <!-- IMAGE -->
+        <div class="mb-4">
+ <img 
+    src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800"
+    alt="Business Team"
+    class="img-fluid w-100"
+    style="border-radius: 8px;"
+>
+        </div>
 
-                        <p class="hero-text mb-4">
-                            Get professional solutions for your business. Fill out the form and our team will contact
-                            you shortly.
-                        </p>
 
-                        <ul class="feature-list">
-                            <li>
-                                <span>✓</span>
+        <!-- CONTENT BELOW IMAGE -->
+        <div>
 
-                                Professional Business Solutions
-                            </li>
+            <h1 class="hero-title mb-4">
+                Grow Your Business
+                <span>With Us</span>
+            </h1>
 
-                            <li>
-                                <span>✓</span>
+            <p class="hero-text mb-4">
+                Get professional solutions for your business.
+                Fill out the form and our team will contact
+                you shortly.
+            </p>
 
-                                Fast Response From Our Team
-                            </li>
+            <ul class="feature-list">
 
-                            <li>
-                                <span>✓</span>
+                <li>
+                    <span>✓</span>
+                    Professional Business Solutions
+                </li>
 
-                                Expert Support
-                            </li>
+                <li>
+                    <span>✓</span>
+                    Fast Response From Our Team
+                </li>
 
-                            <li>
-                                <span>✓</span>
+                <li>
+                    <span>✓</span>
+                    Expert Support
+                </li>
 
-                                Flexible Services
-                            </li>
+                <li>
+                    <span>✓</span>
+                    Flexible Services
+                </li>
 
-                            <li>
-                                <span>✓</span>
+                <li>
+                    <span>✓</span>
+                    Customer-Focused Approach
+                </li>
 
-                                Customer-Focused Approach
-                            </li>
-                        </ul>
-                    </div>
+            </ul>
+
+        </div>
+
+    </div>
 
                     <!-- ================= FORM ================= -->
 
@@ -432,10 +477,90 @@
                 </div>
             </div>
         </section>
+		
+		
+		<!-- ================= SPEAK WITH OUR TEAM start ================= -->
+
+<section class="team-section">
+
+    <div class="container-fluid">
+
+        <h2 class="text-center fw-bold mb-3">
+            Speak With Our Team
+        </h2>
+
+        <div class="row g-4 justify-content-center">
+
+            <!-- Card 1 -->
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <div class="team-card text-center">
+
+                    <img
+                        src="https://i.pravatar.cc/150?img=12"
+                        alt="James Wilson"
+                        class="team-image"
+                    >
+
+                    <h5>James Wilson</h5>
+
+                    <p>Software Developer</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Card 2 -->
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <div class="team-card text-center">
+
+                    <img
+                        src="https://i.pravatar.cc/150?img=47"
+                        alt="Zoe Olivia"
+                        class="team-image"
+                    >
+
+                    <h5>Zoe Olivia</h5>
+
+                    <p>Fashion Designer</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Card 3 -->
+            <div class="col-12 col-md-6 col-lg-3 b-5">
+
+                <div class="team-card text-center">
+
+                    <img
+                        src="https://i.pravatar.cc/150?img=11"
+                        alt="David Brown"
+                        class="team-image"
+                    >
+
+                    <h5>David Brown</h5>
+
+                    <p>Graphic Designer</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+		<!-- ================= SPEAK WITH OUR TEAM End ================= -->
 
         <!-- ================= FOOTER ================= -->
 
-        <footer class="py-4">
+        <footer class="py-4 mt-5">
             <div class="container text-center">
                 <p class="mb-0 text-secondary">© 2026 MyCompany. All Rights Reserved.</p>
             </div>
@@ -449,24 +574,13 @@
 
         <script>
             $(document).ready(function () {
-                /* ============================================
-           CUSTOM EMAIL VALIDATION
-        ============================================ */
-
                 jQuery.validator.addMethod(
                     "validEmail",
-
                     function (value, element) {
                         return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value);
                     },
-
                     "Please enter a valid email address."
                 );
-
-                /* ============================================
-           FORM VALIDATION
-        ============================================ */
-
                 $("#leadForm").validate({
                     rules: {
                         /* FIRST NAME */
@@ -768,13 +882,9 @@
 
                     `);
 
-                            /* ------------------------------------
-                       RESET FORM
-                    ------------------------------------ */
+                
 
                             form.reset();
-
-                            /* Remove validation classes */
 
                             $(form)
                                 .find(".error")
@@ -828,6 +938,6 @@
                 });
             });
         </script>
-        ```
+       
     </body>
 </html>

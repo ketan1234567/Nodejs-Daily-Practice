@@ -1,0 +1,44 @@
+const register_data=async(req,res)=>{
+    try {
+
+        const {data}=req.body
+        
+        
+    } catch (error) {
+        
+    }
+
+}
+
+const showData=async()=>{
+    try {
+        
+    } catch (error) {
+        
+    }
+
+}
+const Update_data=async()=>{
+    try {
+        
+    } catch (error) {
+        
+    }
+
+}
+const delete_data=async()=>{
+    try {
+        
+    } catch (error) {
+        
+    }
+
+}
+
+module.exports={
+    register_data,
+    showData,
+    Update_data,
+    delete_data
+
+}

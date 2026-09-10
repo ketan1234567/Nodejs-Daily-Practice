@@ -1,0 +1,4 @@
+_id,name,email,age,__v,password,role,createdAt,updatedAt,status
+6aa09213e347bd7b4d1acbe2,Ketan,ketan@gmail.com,25,0,,,,,
+6aa1a33ea3b4b4036670eced,suraj,suraj@gmail.com,30,0,,,,,
+6aa1effb8061e8aba38209f2,Admin,admin@gmail.com,,0,$2b$10$nKZIyyAwS.TDDiTEjRROQO4KpvcEYUaMEiE9Ci0r3BNbucAD4cUai,admin,2026-09-09T23:47:07.177Z,2026-09-09T23:47:07.177Z,Active

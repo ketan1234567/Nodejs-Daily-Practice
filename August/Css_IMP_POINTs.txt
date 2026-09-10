@@ -1,0 +1,314 @@
+1) What is the difference between <div>, <section>, <article>, and <main>?
+
+1) Division
+ Meaning:None it has no special meaning 
+ Use: group element together only when no other specific tag List
+best for:Applying Css  styles or organizing layout boxes.
+
+2) section
+
+Meaning: a thematic grouping of content usually with heading 
+use:divide  a page into distinct,logical Parts
+Best for: Chapters, tabbed content, or grouped sections like an "About Us" or "Contact" area on a homepage.
+
+3)<article>
+Meaning: A self-contained, independent piece of content.
+Use: Content that still makes complete sense if you read it all by itself outside the website.
+Best for: Blog posts, news stories, product cards, or user comments.
+
+
+
+4. <main> (Main Content)Meaning: The central, dominant topic of the webpage body.
+Use: Hold the most important information of the page.
+Best for: The core content area. You should use this tag only once per page.
+
+
+2. Why is semantic HTML important in a production application?
+
+Semantic HTML is important in a production application because it directly improves accessibility
+(a11y), Search Engine Optimization (SEO), code maintainability, and browser performance.
+Using meaningful tags like <main>, <article>, and <nav> instead 
+of generic <div> stacks ensures that a website is built to modern web standards.
+
+
+3. Explain the CSS Box Model.
+
+The CSS Box Model is the core foundational rule of web 
+layout that dictates how every single HTML element is
+rendered as a rectangular box. The browser's rendering engine uses this model to calculate
+exactly how much space an element takes up and how it interacts with other surrounding elements
+
+ ┌───────────────────────────────────────────────┐
+ │                    MARGIN                     │  <- Outer spacing
+ │   ┌───────────────────────────────────────┐   │
+ │   │                BORDER                 │   │  <- Edge / Outline
+ │   │   ┌───────────────────────────────┐   │   │
+ │   │   │            PADDING            │   │   │  <- Inner spacing
+ │   │   │   ┌───────────────────────┐   │   │   │
+ │   │   │   │                       │   │   │   │
+ │   │   │   │        CONTENT        │   │   │   │  <- Text, images, etc.
+ │   │   │   │                       │   │   │   │
+ │   │   │   └───────────────────────┘   │   │   │
+ │   │   └───────────────────────────────┘   │   │
+ │   └───────────────────────────────────────┘   │
+ └───────────────────────────────────────────────┘
+
+4. What is the difference between:
+
+display: block;
+display: inline;
+display: inline-block;
+
+1. display: block
+
+A block element takes the full available width and starts on a new line.
+
+.box {
+  display: block;
+}
+
+<div>Box 1</div>
+<div>Box 2</div>
+
+Result:
+
+Box 1
+----------------
+Box 2
+----------------
+
+
+Common block elements:
+
+div
+p
+h1–h6
+section
+
+✅ New line
+✅ Width/height work
+✅ Margin/padding work
+
+___________________________________________________________________________________________________________
+
+2. display: inline
+
+An inline element stays in the same line.
+
+.text {
+  display: inline;
+}
+
+<span>Hello</span>
+<span>World</span>
+
+Result:
+
+Hello World
+
+Common inline elements:
+
+span
+a
+strong
+em
+
+✅ Same line
+❌ width and height generally don't work as expected
+✅ Horizontal padding/margin can be used
+___________________________________________________________________________________________________________
+
+3. display: inline-block
+
+This is basically:
+
+Stay in the same line + allow width and height
+
+.box {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+}
+
+
+<div class="box">Box 1</div>
+<div class="box">Box 2</div>
+
+Result:
+
+[ Box 1 ] [ Box 2 ]
+
+✅ Same line
+✅ Width works
+✅ Height works
+✅ Padding/margin work
+
+| Display        | New line? | Width/Height?  |
+| -------------- | --------- | -------------- |
+| `block`        | ✅ Yes     | ✅ Yes          |
+| `inline`       | ❌ No      | ❌ Not normally |
+| `inline-block` | ❌ No      | ✅ Yes          |
+
+
+block starts on a new line and takes available width, inline stays in the same line but doesn't normally accept width/height, and inline-block stays in the same line while allowing width and height.
+
+___________________________________________________________________________________________________________
+
+5. What is CSS specificity? Which one wins?
+
+#title { color: green; }   /* सर्वात strong */
+.text  { color: blue; }    /* medium */
+p      { color: red; }     /* weak */
+
+CSS specificity decides which CSS rule wins when multiple rules 
+target the same element. Generally, ID has higher specificity than
+ class, and class has higher specificity than element/tag selector.
+
+___________________________________________________________________________________________________________
+
+
+.container {
+      width: 600px;
+      height: 300px;
+      border: 2px solid black;
+
+      display: flex;
+
+      /* Horizontal alignment */
+      justify-content: center;
+
+      /* Vertical alignment */
+      align-items: center;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="box">
+      Box
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+___________________________________________________________________________________________________________
+
+Flexbox = 1 Direction
+
+Grid = 2 Directions
+
+
+Flexbox is mainly used for one-dimensional layouts, 
+where we arrange items in a row or column. 
+Grid is used for two-dimensional layouts, where we control rows and columns together.
+
+Website
+│
+├── Navbar          → Flexbox
+│
+├── Hero Section
+│
+├── Product Cards   → Grid
+│
+├── Product Card
+│    ├── Image
+│    ├── Title
+│    └── Buttons    → Flexbox
+│
+└── Footer          → Flexbox
+
+
+| Flexbox                          | Grid                       |
+| -------------------------------- | -------------------------- |
+| 1-dimensional                    | 2-dimensional              |
+| Row **किंवा** Column             | Row **आणि** Column         |
+| Content alignment साठी excellent | Page/layout साठी excellent |
+| Navbar                           | Dashboard                  |
+| Buttons                          | Product grid               |
+| Small components                 | Complex layouts            |
+
+___________________________________________________________________________________________________________
+
+9. What does this mean? grid-template-columns: repeat(3, 1fr);
+
+
+___________________________________________________________________________________________________________
+Responsive Design
+
+10. What does mobile-first responsive design mean?
+
+Mobile-first responsive design means we first build the layout for small screens and then add styles for larger screens using media queries or responsive breakpoints.
+
+11. How would you make a layout:
+
+1 column on mobile
+2 columns on tablet
+4 columns on desktop
+
+You can answer using normal CSS or Tailwind.
+
+
+
+display:flex
+align-items:items-center
+justify:justify-between
+
+px-6 py-4 bg-white shadow-md
+
+
+<div class="flex items-center justify-between ">
+
+
+
+Step 2 — Install Tailwind CSS
+
+For the current Tailwind setup, install:
+
+npm install tailwindcss @tailwindcss/vite
+
+Then configure the Vite plugin.
+
+Open:
+
+vite.config.js
+
+and configure Tailwind with the Vite plugin.
+
+Then in your main CSS file, add:
+
+@import "tailwindcss";
+
+Restart:
+
+npm run dev
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

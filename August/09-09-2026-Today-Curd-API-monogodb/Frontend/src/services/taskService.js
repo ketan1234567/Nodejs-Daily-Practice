@@ -1,81 +1,66 @@
-const TASK_STORAGE_KEY = "tasks";
+import axios from "axios";
 
-// Get all tasks
-export const getTasks = () => {
-  const tasks = localStorage.getItem(TASK_STORAGE_KEY);
+const API_URL = "http://localhost:5000/api/tasks";
 
-  return tasks ? JSON.parse(tasks) : [];
-};
+// Get token
+const getAuthHeaders = () => {
+  const token = localStorage.getItem("token");
 
-// Create a new task
-export const createTask = (taskData) => {
-  const tasks = getTasks();
-
-  const newTask = {
-    id: Date.now(),
-    title: taskData.title,
-    description: taskData.description,
-    assignedTo: taskData.assignedTo,
-    priority: taskData.priority,
-    status: taskData.status,
-    dueDate: taskData.dueDate,
-    createdAt: new Date().toISOString(),
+  return {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
   };
-
-  tasks.push(newTask);
-
-  localStorage.setItem(
-    TASK_STORAGE_KEY,
-    JSON.stringify(tasks)
-  );
-
-  return newTask;
 };
 
-// Get single task
-export const getTaskById = (id) => {
-  const tasks = getTasks();
-
-  return tasks.find(
-    (task) => task.id === Number(id)
+// GET ALL TASKS
+export const getTasks = async () => {
+  const response = await axios.get(
+    API_URL,
+    getAuthHeaders()
   );
+
+  return response.data;
 };
 
-// Update task
-export const updateTask = (id, updatedData) => {
-  const tasks = getTasks();
-
-  const updatedTasks = tasks.map((task) =>
-    task.id === Number(id)
-      ? {
-          ...task,
-          ...updatedData,
-        }
-      : task
+// GET SINGLE TASK
+export const getTaskById = async (id) => {
+  const response = await axios.get(
+    `${API_URL}/${id}`,
+    getAuthHeaders()
   );
 
-  localStorage.setItem(
-    TASK_STORAGE_KEY,
-    JSON.stringify(updatedTasks)
-  );
-
-  return updatedTasks.find(
-    (task) => task.id === Number(id)
-  );
+  return response.data;
 };
 
-// Delete task
-export const deleteTask = (id) => {
-  const tasks = getTasks();
-
-  const filteredTasks = tasks.filter(
-    (task) => task.id !== Number(id)
+// CREATE TASK
+export const createTask = async (taskData) => {
+  const response = await axios.post(
+    API_URL,
+    taskData,
+    getAuthHeaders()
   );
 
-  localStorage.setItem(
-    TASK_STORAGE_KEY,
-    JSON.stringify(filteredTasks)
+  return response.data;
+};
+
+// UPDATE TASK
+export const updateTask = async (id, taskData) => {
+  const response = await axios.put(
+    `${API_URL}/${id}`,
+    taskData,
+    getAuthHeaders()
   );
 
-  return true;
+  return response.data;
+};
+
+// DELETE TASK
+export const deleteTask = async (id) => {
+  const response = await axios.delete(
+    `${API_URL}/${id}`,
+    getAuthHeaders()
+  );
+
+  return response.data;
 };

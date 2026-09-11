@@ -20,43 +20,56 @@ function Login() {
     });
   };
 
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    setError("");
-    setLoading(true);
+  setError("");
+  setLoading(true);
 
-    try {
-      const data = await loginUser(formData);
+  try {
+    const data = await loginUser(formData);
 
-      // Save JWT token
-      localStorage.setItem("token", data.token);
+    // Clear old login data
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
 
-      // Save user
-      localStorage.setItem(
-        "user",
-        JSON.stringify(data.user)
-      );
+    // Save new JWT token
+    localStorage.setItem("token", data.token);
 
-      // Role based redirect
-      if (data.user.role === "admin") {
-        navigate("/admin/dashboard");
-      } else {
-        navigate("/user/dashboard");
-      }
-    } catch (error) {
-  console.log("Login Error:", error);
-  console.log("Status:", error.response?.status);
-  console.log("Backend Response:", error.response?.data);
+    // Save logged-in user
+    localStorage.setItem(
+      "user",
+      JSON.stringify(data.user)
+    );
 
-      setError(
-        error.response?.data?.message ||
-          "Login failed. Please try again."
-      );
-    } finally {
-      setLoading(false);
+    // Role based redirect
+    if (data.user.role === "admin") {
+      navigate("/admin/dashboard");
+    } else {
+      navigate("/user/dashboard");
     }
-  };
+
+  } catch (error) {
+
+    console.log("Login Error:", error);
+    console.log("Status:", error.response?.status);
+    console.log(
+      "Backend Response:",
+      error.response?.data
+    );
+
+    setError(
+      error.response?.data?.message ||
+      "Login failed. Please try again."
+    );
+
+  } finally {
+    setLoading(false);
+  }
+};
+
+ 
 
   return (
     <div className="container-fluid min-vh-100 bg-light d-flex justify-content-center align-items-center">

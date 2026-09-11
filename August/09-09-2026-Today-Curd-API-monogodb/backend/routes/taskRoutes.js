@@ -11,9 +11,9 @@ const {
 const authMiddleware = require("../middleware/authMiddleware");
 const roleMiddleware = require("../middleware/roleMiddleware");
 
-console.log("createTask:", typeof createTask);
-console.log("authMiddleware:", typeof authMiddleware);
-console.log("roleMiddleware:", typeof roleMiddleware);
+// console.log("createTask:", typeof createTask);
+// console.log("authMiddleware:", typeof authMiddleware);
+// console.log("roleMiddleware:", typeof roleMiddleware);
 
 const router = express.Router();
 

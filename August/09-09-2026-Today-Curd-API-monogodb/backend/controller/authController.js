@@ -21,9 +21,9 @@ const login = async (req, res) => {
     // 2. Find user by email
     const user = await User.findOne({ email });
 
-console.log("LOGIN USER FROM DATABASE:", user);
-console.log("LOGIN USER STATUS:", user?.status);
-console.log("LOGIN USER EMAIL:", user?.email);
+// console.log("LOGIN USER FROM DATABASE:", user);
+// console.log("LOGIN USER STATUS:", user?.status);
+// console.log("LOGIN USER EMAIL:", user?.email);
 
 
     if (!user) {

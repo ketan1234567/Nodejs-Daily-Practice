@@ -261,7 +261,7 @@ Mobile-first responsive design means we first build the layout for small screens
 4 columns on desktop
 
 You can answer using normal CSS or Tailwind.
-
+___________________________________________________________________________________________________________
 
 
 display:flex
@@ -273,14 +273,14 @@ px-6 py-4 bg-white shadow-md
 
 <div class="flex items-center justify-between ">
 
-
+___________________________________________________________________________________________________________
 
 Step 2 — Install Tailwind CSS
 
 For the current Tailwind setup, install:
 
 npm install tailwindcss @tailwindcss/vite
-
+___________________________________________________________________________________________________________
 Then configure the Vite plugin.
 
 Open:
@@ -288,7 +288,7 @@ Open:
 vite.config.js
 
 and configure Tailwind with the Vite plugin.
-
+___________________________________________________________________________________________________________
 Then in your main CSS file, add:
 
 @import "tailwindcss";
@@ -299,6 +299,7 @@ npm run dev
 
 
 
+npm create vite@latest Frontend
 
 
 
@@ -307,8 +308,170 @@ npm run dev
 
 
 
+admin@gmail.com
+123456
+
+
+WM-LEO-DD-Rethinking-1
+
+
+Urgent EDM Link Creation Request_WM LEO (DD)_ FY26 Q3
 
 
 
 
+
+
+"You used JWT — explain the complete flow."
+
+"Your API is slow — how will you find the exact problem?"
+
+"MongoDB query takes 3 seconds — what will you check?"
+
+"Why did you choose MongoDB instead of MySQL?"
+
+"How does Node handle 1,000 concurrent requests?"
+
+"What happens if your database goes down?"
+
+"What happens if Redis goes down?"
+
+"How do you handle 10,000 requests?"
+
+"Why is your Event Loop blocked?"
+
+"Explain one production bug you fixed."
+
+
+ 
+
+
+1) one question
+
+
+
+console.log("A");
+
+setTimeout(() => {
+    console.log("B");
+}, 0);
+
+Promise.resolve().then(() => {
+    console.log("C");
+});
+
+console.log("D");
+
+
+output it will come like
+
+A
+D
+C
+B
+
+becasue of first run sychronous code run first after that 
+run micotask run like Promise and finally run Macrotask run 
+
+
+
+2) You have 3 APIs:
+
+getUser()
+getOrders()
+getProducts()
+
+Currently they are called one after another.
+
+Question: How would you call all 3 APIs at the same time using JavaScript?
+
+Explain why your approach is faster.
+
+
+
+
+
+
+
+function  getUser(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+              resolve({name:"ketan"})
+        }, 1000);
+      
+    })
+
+}
+function  getOrders(){
+    return new Promise((resolve, reject) => {
+                setTimeout(() => {
+ resolve({order:"confirmed",status:"purshche"})
+        }, 2000);
+       
+    })
+
+}
+function  getProducts(){
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve({Product_name:"mobile_one_two"})
+        }, 3000);
+        
+    })
+
+}
+
+
+ async function showAll() {
+    try {
+console.time("Sequential");
+        const data1=await getUser()
+        const data2=await getOrders()
+        const data3=await getProducts()
+
+    console.timeEnd("Sequential");
+
+        console.log("Sequential Result:", [data1, data2, data3]);
+
+ console.time("Parallel");
+
+ const [demo1,demo2,demo3]=await Promise.all([
+    getUser(),
+    getOrders(),
+    getProducts()
+ ])
+
+     console.timeEnd("Parallel");
+
+     console.log("Parallel Result:", [demo1, demo2, demo3]);
+    
+    
+        
+    } catch (error) {
+        console.log(error);
+        
+        
+    }
+    
+}
+
+showAll().then((value)=>{
+    console.log(value);
+}).catch((error)=>{
+    console.log(error);
+    
+})
+
+we have used Promise all 
+
+
+
+Definition → Why → Example → Real project scenario
+
+
+LP-Intel-Quote-AMAE-GNR-1
+
+
+ 
 
